@@ -17,6 +17,11 @@ const bookSchema = new Schema({
         type: Boolean,
         default: false,
       },
+      owner: {
+        type: Schema.Types.ObjectId,
+        ref: 'user',
+        require: true,
+      }
 });
 
 bookSchema.post("save", handleMongooseError)
